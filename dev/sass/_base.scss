@@ -1,0 +1,85 @@
+//**** VARIABLES *****
+
+
+//**** MIXINS *****
+
+// ::: Set a rem font size with pixel fallback
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// ::: BREAKPOINTS
+
+@mixin desktop {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+// ::: ANIMATIONS AND KEYFRAMES
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  animation: #{$str};      
+}
+
+
+// ::: Cross browser opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin hidden(){
+	visibility: hidden;
+	opacity: 0;
+}
+
+@mixin visible(){
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+
+
+
+

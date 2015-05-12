@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../dist/css/styles.min.css">
+        <style type="text/css" media="screen">
+            body {
+                font-family: arial;
+                line-height: 24px;
+                text-align: center; 
+                color: #8b8b8b;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .drum {
+                border-radius: 50%;
+                background-color: #fbfaee;
+                border: solid 2px #bfbfbf;
+                margin: 20px auto;
+                opacity: 1;
+                        transform: scale(1);
+                -webkit-transform: scale(1);
+                        transition: all 0.2s;
+                -webkit-transition: all 0.2s;
+            }
+            .hit {
+                background-color: #e8e7dd;
+                        transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+            }
+            .hi-hat {
+                margin: 20px auto;
+                width: 30px;
+                height: 30px;
+                background-color: #f1e86c;
+                border: solid 30px #fcf271;
+                border-radius: 50%;
+                        transform: scale(1);
+                -webkit-transform: scale(1);
+                        transition: all 0.2s;
+                -webkit-transition: all 0.2s;
+            }
+            .hat-hit {
+                background-color: #ddd463;
+                border: solid 30px #e9df68;
+                        transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+            }
+            .snare {
+                width: 100px;
+                height: 100px;
+            }
+            .kick {
+                width: 200px;
+                height: 200px;
+            }
+            .next {
+                display: inline-block;
+                padding: 20px 30px;
+                background-color: #0080ff;
+                border-radius: 4px;
+                cursor: pointer;
+                color: #fff;
+            }
+            .next:hover {
+                background-color: #0069d3;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <a href="player-single.html" title="Go to single player">Single Player</a>
+        <h3>'H' = Hi Hat<br/>'S' = Snare<br/>'K' = Kick</h3>
+        <div class="hi-hat"></div>
+        <div class="snare drum"></div>
+        <div class="kick drum"></div>
+        <div id="kit-name"><h1></h1></div>
+        <div class="next">Next Kit</div>
+        <!-- Add your site or application content here -->
+        <script src="../bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="../bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+        <script src="../bower_components/ionsound/js/ion.sound.js" type="text/javascript"></script>
+        <script src="../dist/js/main.js" type="text/javascript"></script>
+    </body>
+</html>

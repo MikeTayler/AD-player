@@ -1,0 +1,29 @@
+
+@import '_reset';
+@import '_base';
+@import '_keyboard';
+@import '_player';
+
+
+.hide {
+   @include hidden();
+}
+.show {
+   @include visible();
+}
+
+@include desktop {
+   .is-small {
+      display: none;
+   }
+}
+@include tablet {
+   .is-middle {
+      display: none;
+   }
+}
+@include phone {
+   .is-large {
+      display: none;
+   }
+}
