@@ -79,10 +79,10 @@ $(document).keypress(function(e) {
     // Get the drum and keyboard key
     var drumAndKeyboard = $('.' + drum + ',' + '.keyboard-' + drum);
 
-    // Play the sample
+    // Play sample - ion magik
     ion.sound.play(drum);
 
-    // Toggle classes to make drims and kyboard animate
+    // Toggle classes to make drums and kyboard animate
     drumAndKeyboard.addClass('hit').delay(50).queue(function(next) {
         drumAndKeyboard.removeClass('hit');
         next();
