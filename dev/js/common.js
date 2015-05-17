@@ -3,6 +3,7 @@
 //
 // Get the name of the kit from the id on the body tag
 // use it in the path to the samples.
+
 var kitFolder = $('body').attr('id');
 
 // Setup samples 
