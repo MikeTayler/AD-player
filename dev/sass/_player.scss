@@ -6,7 +6,6 @@
     z-index:3;
     width:100%;
     height:100%;
-    // display: none;
 }
 .show {
     display: block;
@@ -95,9 +94,25 @@
 }
 
 .snare { @include drum-size(85px); top: 143px; left: 202px; }
-.tom1 { @include drum-size(71px); top: 66px; left: 224px; }
-.tom2 { @include drum-size(80px); top: 130px; left: 310px; }
-.tom3 { @include drum-size(95px); top: 210px; left: 337px; }
+// 2 Tom kit
+.a-tom1 { @include drum-size(75px); top: 66px; left: 230px; }
+.a-tom2 { @include drum-size(90px); top: 150px; left: 310px; }
+// 3 Tom kit
+.b-tom1 { @include drum-size(71px); top: 66px; left: 224px; }
+.b-tom2 { @include drum-size(80px); top: 130px; left: 310px; }
+.b-tom3 { @include drum-size(95px); top: 212px; left: 338px; }
+// 4 Tom kit
+.c-tom1 { @include drum-size(45px); top: 87px; left: 185px; }
+.c-tom2 { @include drum-size(55px); top: 75px; left: 238px; }
+.c-tom3 { @include drum-size(70px); top: 85px; left: 300px; }
+.c-tom4 { @include drum-size(95px); top: 160px; left: 325px; }
+// 5 Tom kit
+.d-tom1 { @include drum-size(45px); top: 87px; left: 180px; }
+.d-tom2 { @include drum-size(55px); top: 75px; left: 230px; }
+.d-tom3 { @include drum-size(70px); top: 70px; left: 291px; }
+.d-tom4 { @include drum-size(80px); top: 135px; left: 325px; }
+.d-tom5 { @include drum-size(90px); top: 217px; left: 344px; }
+
 .hiHat { @include drum-size(75px); top: 125px; left:143px; }
 .crash1 { @include drum-size(90px); top: 33px; left: 148px; }
 .crash2 { @include drum-size(95px); top: 34px; left: 365px; }
