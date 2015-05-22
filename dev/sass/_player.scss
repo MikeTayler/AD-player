@@ -43,6 +43,21 @@
     height: 335px;
     margin: 0 auto;
 }
+
+// Rug Colour
+@mixin rug-color($a,$b,$c) {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 61px;
+    background-color: rgba($a,$b,$c,0.2);
+    height: 335px;
+    width: 475px;
+}
+.monotown:before { @include rug-color(200,184,0); }
+.gorilla:before { @include rug-color(104,0,200); }
+.kingpin:before { @include rug-color(139,93,0); }
+
 @mixin drum-size($size) {
     width: $size;
     height: $size;
@@ -117,6 +132,7 @@
 .crash1 { @include drum-size(90px); top: 33px; left: 148px; }
 .crash2 { @include drum-size(95px); top: 34px; left: 365px; }
 .ride { @include drum-size(120px); top: 46px; left: 302px; }
+
 
 
 

@@ -2,9 +2,8 @@
 // Simple drum player for Analogue Drums
 //
 // Get the name of the kit from the id on the body tag
-// use it in the path to the samples.
 
-var kitFolder = $('body').attr('id');
+var drumKit = $('body').attr('id');
 
 // Setup samples 
 ion.sound({
@@ -37,27 +36,25 @@ ion.sound({
         volume: 0
     }],
     volume: 0.5,
-    path: "assets/" + kitFolder.substring(2) + "/",
+    path: "assets/" + drumKit.substring(2) + "/",
     multiplay: true,
     preload: true
 });
 
 // Kit configurations
 $(document).ready(function() {
-    var kitA = "<div class='a-tom1 drum'></div><div class='a-tom2 drum'></div>",
-        kitB = "<div class='b-tom1 drum'></div><div class='b-tom2 drum'></div><div class='b-tom3 drum'></div>",
-        kitC = "<div class='c-tom1 drum'></div><div class='c-tom2 drum'></div><div class='c-tom3 drum'></div><div class='c-tom4 drum'></div>",
-        kitD = "<div class='d-tom1 drum'></div><div class='d-tom2 drum'></div><div class='d-tom3 drum'></div><div class='d-tom4 drum'></div><div class='d-tom5 drum'></div>";
-    if (kitFolder.substring(0, 1) === 'a') {
-        $(kitA).insertAfter('.snare');
-    } else if (kitFolder.substring(0, 1) === 'b') {
-        $(kitB).insertAfter('.snare');
-    } else if (kitFolder.substring(0, 1) === 'c') {
-        $(kitC).insertAfter('.snare');
-    } else if (kitFolder.substring(0, 1) === 'd') {
-        $(kitD).insertAfter('.snare');
-    }
+    var kitLetter = Number(drumKit.substring(0, 1));
+    var tomConfig = ["<div class='a-tom1 drum'></div><div class='a-tom2 drum'></div>",
+        "<div class='b-tom1 drum'></div><div class='b-tom2 drum'></div><div class='b-tom3 drum'></div>",
+        "<div class='c-tom1 drum'></div><div class='c-tom2 drum'></div><div class='c-tom3 drum'></div><div class='c-tom4 drum'></div>",
+        "<div class='d-tom1 drum'></div><div class='d-tom2 drum'></div><div class='d-tom3 drum'></div><div class='d-tom4 drum'></div><div class='d-tom5 drum'></div>"
+    ];
+    $(tomConfig[kitLetter]).insertAfter('.snare');
+});
 
+// Rug color
+$(document).ready(function() {
+    $('.kit').addClass(drumKit.substring(2));
 });
 
 // Keyboard event setup
