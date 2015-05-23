@@ -18,7 +18,7 @@ ion.sound({
         volume: 0.3
     }, {
         name: "rimClick",
-        volume: 0.3
+        volume: 0.4
     }, {
         name: "tom1",
         volume: 0.3
@@ -32,6 +32,9 @@ ion.sound({
         name: "crash1",
         volume: 0.4
     }, {
+        name: "crash2",
+        volume: 0.4
+    }, {
         name: "blank",
         volume: 0
     }],
@@ -41,15 +44,30 @@ ion.sound({
     preload: true
 });
 
-// Kit configurations
+// Tom configurations
 $(document).ready(function() {
-    var kitLetter = Number(drumKit.substring(0, 1));
-    var tomConfig = ["<div class='a-tom1 drum'></div><div class='a-tom2 drum'></div>",
-        "<div class='b-tom1 drum'></div><div class='b-tom2 drum'></div><div class='b-tom3 drum'></div>",
-        "<div class='c-tom1 drum'></div><div class='c-tom2 drum'></div><div class='c-tom3 drum'></div><div class='c-tom4 drum'></div>",
-        "<div class='d-tom1 drum'></div><div class='d-tom2 drum'></div><div class='d-tom3 drum'></div><div class='d-tom4 drum'></div><div class='d-tom5 drum'></div>"
+    var tomConfigNumber = Number(drumKit.substring(0, 1));
+    var tomInstertPos = $('#keyboard li:nth-child(5)');
+    var tomConfig = [
+        "<div class='tom1 a-tom1 drum'></div><div class='tom2 a-tom2 drum'></div>",
+        "<div class='tom1 b-tom1 drum'></div><div class='tom2 b-tom2 drum'></div><div class='tom3 b-tom3 drum'></div>",
+        "<div class='tom1 c-tom1 drum'></div><div class='tom2 c-tom2 drum'></div><div class='tom3 c-tom3 drum'></div><div class='tom4 c-tom4 drum'></div>",
+        "<div class='tom1 d-tom1 drum'></div><div class='tom2 d-tom2 drum'></div><div class='tom3 d-tom3 drum'></div><div class='tom4 d-tom4 drum'></div><div class='tom5 d-tom5 drum'></div>"
     ];
-    $(tomConfig[kitLetter]).insertAfter('.snare');
+    var tomKeyboardConfig = [
+        "<li class='player-key keyboard-tom1'>T1</li><li class='player-key keyboard-tom2'>T2</li><li>i</li><li>o</li><li>p</li>",
+        "<li class='player-key keyboard-tom1'>T1</li><li class='player-key keyboard-tom2'>T2</li><li class='player-key keyboard-tom3'>T3</li><li>o</li><li>p</li>",
+        "<li class='player-key keyboard-tom1'>T1</li><li class='player-key keyboard-tom2'>T2</li><li class='player-key keyboard-tom3'>T3</li><li class='player-key keyboard-tom4'>T4</li><li>p</li>",
+        "<li class='player-key keyboard-tom1'>T1</li><li class='player-key keyboard-tom2'>T2</li><li class='player-key keyboard-tom3'>T3</li><li class='player-key keyboard-tom4'>T4</li><li class='player-key keyboard-tom5'>T5</li>"
+    ];
+    $(tomConfig[tomConfigNumber]).insertAfter('.snare');
+    $(tomKeyboardConfig[tomConfigNumber]).insertAfter(tomInstertPos);
+    console.log(tomInstertPos);
+});
+
+// Cymbal configurations
+$(document).ready(function() {
+
 });
 
 // Rug color
@@ -76,17 +94,20 @@ $(document).keypress(function(e) {
         case 108:
             drum = 'rimClick';
             break;
-        case 117:
+        case 121:
             drum = 'tom1';
             break;
-        case 105:
+        case 117:
             drum = 'tom2';
             break;
-        case 111:
+        case 105:
             drum = 'tom3';
             break;
-        case 121:
+        case 101:
             drum = 'crash1';
+            break;
+        case 114:
+            drum = 'crash2';
             break;
         default:
             drum = 'blank';

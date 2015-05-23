@@ -35,7 +35,7 @@
     transition: background-color 0.3s;
 }
 .kit {
-    background: url('../images/rug.png') no-repeat;
+    background: url('../images/rug.jpg') no-repeat;
     background-position: center;
     background-size: 80%;
     position: relative;
@@ -45,18 +45,26 @@
 }
 
 // Rug Colour
-@mixin rug-color($a,$b,$c) {
+@mixin rug-color($r,$g,$b) {
     content: " ";
     display: block;
     position: absolute;
-    left: 61px;
-    background-color: rgba($a,$b,$c,0.2);
+    left: 60px;
+    background-color: rgba($r,$g,$b,0.4);
     height: 335px;
-    width: 475px;
+    width: 480px;
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.3);
 }
 .monotown:before { @include rug-color(200,184,0); }
 .gorilla:before { @include rug-color(104,0,200); }
 .kingpin:before { @include rug-color(139,93,0); }
+.royale:before { @include rug-color(108,0,139); }
+.kingpin:before { @include rug-color(139,93,0); }
+.pizazz:before { @include rug-color(147,52,0); }
+.smoker:before { @include rug-color(150,150,150); }
+.jazz:before { @include rug-color(129,0,76); }
 
 @mixin drum-size($size) {
     width: $size;
@@ -77,10 +85,6 @@
     opacity: 0.9;
     border-radius: 50%;
     background: #3a382e;
-    background: -moz-radial-gradient(center, ellipse cover,  #3a382e 0%, #a69a82 4%, #f4efeb 24%, #a69a82 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3a382e), color-stop(4%,#a69a82), color-stop(24%,#f4efeb), color-stop(100%,#a69a82));
-    background: -webkit-radial-gradient(center, ellipse cover,  #3a382e 0%,#a69a82 4%,#f4efeb 24%,#a69a82 100%);
-    background: -o-radial-gradient(center, ellipse cover,  #3a382e 0%,#a69a82 4%,#f4efeb 24%,#a69a82 100%);
     background: radial-gradient(ellipse at center,  #3a382e 0%,#a69a82 4%,#f4efeb 24%,#a69a82 100%);
     position: absolute;
     box-shadow: inset 0px 0px 20px 0px rgba(174, 157, 129, 0.7);
@@ -90,10 +94,6 @@
     width: 145px;
     height: 85px;
     background: #9b9a98;
-    background: -moz-linear-gradient(left,  #9b9a98 0%, #c8c7c3 20%, #ecebe9 50%, #c8c7c3 80%, #9b9a98 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#9b9a98), color-stop(20%,#c8c7c3), color-stop(50%,#ecebe9), color-stop(80%,#c8c7c3), color-stop(100%,#9b9a98));
-    background: -webkit-linear-gradient(left,  #9b9a98 0%,#c8c7c3 20%,#ecebe9 50%,#c8c7c3 80%,#9b9a98 100%);
-    background: -o-linear-gradient(left,  #9b9a98 0%,#c8c7c3 20%,#ecebe9 50%,#c8c7c3 80%,#9b9a98 100%);
     background: linear-gradient(to right,  #9b9a98 0%,#c8c7c3 20%,#ecebe9 50%,#c8c7c3 80%,#9b9a98 100%);
     position: absolute;
     border-radius: 2px;
@@ -128,10 +128,12 @@
 .d-tom4 { @include drum-size(80px); top: 135px; left: 325px; }
 .d-tom5 { @include drum-size(90px); top: 217px; left: 344px; }
 
+// cymbal setup 1
 .hiHat { @include drum-size(75px); top: 125px; left:143px; }
 .crash1 { @include drum-size(90px); top: 33px; left: 148px; }
 .crash2 { @include drum-size(95px); top: 34px; left: 365px; }
 .ride { @include drum-size(120px); top: 46px; left: 302px; }
+// cymbal setup 2
 
 
 
